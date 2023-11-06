@@ -1,0 +1,50 @@
+<html style="background:black;">
+
+<head>
+    <script src="https://giscus.app/client.js" data-repo="AzPepoze/Newtube" data-repo-id="R_kgDOG6i1SQ"
+        data-mapping="number" data-term="6" data-emit-metadata="1"
+        data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="en" data-loading="lazy"
+         async>
+        </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async function () {
+            let getframe
+
+            function getting() {
+                if (getframe == null) {
+                    getframe = document.body.getElementsByTagName("iframe")[0]
+                    console.log(getframe)
+                    setTimeout(() => {
+                        getting()
+                    }, 100);
+                } else {
+                    
+                }
+            }
+
+            getting()
+
+            function Check() {
+                if (getframe != null) {
+                    console.log(getframe)
+                    getframe = document.body.getElementsByTagName("iframe")[0]
+                    let InIframe = getframe.contentWindow.document;
+                    console.log(InIframe.getElementsByClassName("gsc-comment"))
+                }
+
+                setTimeout(() => {
+                    Check()
+                }, 1000);
+            }
+
+            Check()
+        })
+    </script>
+</head>
+
+<body class="giscus">
+
+</body>
+
+</html>
